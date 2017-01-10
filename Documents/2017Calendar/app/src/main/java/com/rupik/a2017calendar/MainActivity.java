@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
@@ -14,6 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.appodeal.ads.Appodeal;
+import com.revmob.RevMob;
+import com.revmob.RevMobAdsListener;
+import com.revmob.ads.banner.RevMobBanner;
+import com.revmob.ads.interstitial.RevMobFullscreen;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -33,11 +38,27 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<DateObj> dateArrayList;
 
+    RevMob revmob;
+    RevMobBanner banner;
+    private boolean fullscreenIsLoaded;
+    private RevMobFullscreen fullscreen;
+
+
+    @Override
+    public void  onPause()
+    {
+        super.onPause();
+
+        releaseBanner();
+    }
+
+
     @Override
     public void onResume()
     {
         super.onResume();
 
+        loadBanner();
         //refresh current displayed calendar
         dateArrayList = DateUtils.getInstance().prepareCalDateSet(currentDisplayedYear, currentDisplayedMonth, this, false);
         displayCalendar();
@@ -50,6 +71,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        revmob = RevMob.startWithListener(this, new RevMobAdsListener() {
+            @Override
+            public void onRevMobSessionStarted() {
+                loadBanner(); // Cache the banner once the session is started
+                loadFullscreen(); // pre-cache it without showing it
+            }
+        },"5874a4b7c2164c4947d37e08");
+
+        loadBanner();
+        loadFullscreen(); // pre-cache it without showing it
 
         String appKey = "78dd18cbdd1a74e69505f95d0bc114e25e82f831f17e4bb9";
         Appodeal.initialize(this, appKey, Appodeal.INTERSTITIAL | Appodeal.BANNER);
@@ -66,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 displayPreviousMonthCalendar();
+                reloadBanner();
             }
         });
 
@@ -74,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 displayNextMonthCalendar();
+                reloadBanner();
             }
         });
 
@@ -124,7 +159,8 @@ public class MainActivity extends AppCompatActivity {
     {
         if(adCount == 7)
         {
-            Appodeal.show(this, Appodeal.INTERSTITIAL);
+            //Appodeal.show(this, Appodeal.INTERSTITIAL);
+            showFullscreen();
             adCount = 0;
         }
         else {
@@ -148,7 +184,8 @@ public class MainActivity extends AppCompatActivity {
     {
         if(adCount == 7)
         {
-            Appodeal.show(this, Appodeal.INTERSTITIAL);
+            //Appodeal.show(this, Appodeal.INTERSTITIAL);
+            showFullscreen();
             adCount = 0;
         }
         else {
@@ -205,4 +242,85 @@ public class MainActivity extends AppCompatActivity {
         Button todaysDateButton = (Button)findViewById(R.id.dateSummaryButton);
         todaysDateButton.setText(Integer.toString(date));
     }
+
+    //===Ad Methods
+
+    public void loadBanner(){
+        banner = revmob.preLoadBanner(this, new RevMobAdsListener(){
+            @Override
+            public void onRevMobAdReceived() {
+                showBanner();
+                Log.i("RevMob","Banner Ready to be Displayed"); //At this point, the banner is ready to be displayed.
+            }
+            @Override
+            public void onRevMobAdNotReceived(String message) {
+                Log.i("RevMob","Banner Not Failed to Load");
+            }
+            @Override
+            public void onRevMobAdDisplayed() {
+                Log.i("RevMob","Banner Displayed");
+            }
+        });
+    }
+
+    public void showBanner(){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Appodeal.hide(MainActivity.this, Appodeal.BANNER_BOTTOM);
+                ViewGroup view = (ViewGroup) findViewById(R.id.bannerLayout);
+                if(banner.getParent()!=null)
+                    ((ViewGroup)banner.getParent()).removeView(banner);
+                view.addView(banner);
+                banner.show(); //This method must be called in order to display the ad.
+            }
+        });
+    }
+
+    public void releaseBanner(){
+        banner.release();
+    }
+
+    public void reloadBanner()
+    {
+        releaseBanner();
+        loadBanner();
+    }
+
+    public void loadFullscreen() {
+        //load it with RevMob listeners to control the events fired
+        fullscreen = revmob.createFullscreen(this,  new RevMobAdsListener() {
+            @Override
+            public void onRevMobAdReceived() {
+                Log.i("RevMob", "Fullscreen loaded.");
+                fullscreenIsLoaded = true;
+//                showFullscreen();
+            }
+            @Override
+            public void onRevMobAdNotReceived(String message) {
+                Log.i("RevMob", "Fullscreen not received.");
+            }
+            @Override
+            public void onRevMobAdDismissed() {
+                Log.i("RevMob", "Fullscreen dismissed.");
+            }
+            @Override
+            public void onRevMobAdClicked() {
+                Log.i("RevMob", "Fullscreen clicked.");
+            }
+            @Override
+            public void onRevMobAdDisplayed() {
+                Log.i("RevMob", "Fullscreen displayed.");
+            }
+        });
+    }
+    public void showFullscreen() {
+        if(fullscreenIsLoaded) {
+            fullscreen.show(); // call it wherever you want to show the fullscreen ad
+        } else {
+            Log.i("RevMob", "Ad not loaded yet.");
+            Appodeal.show(this, Appodeal.INTERSTITIAL);
+        }
+    }
+
 }

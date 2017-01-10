@@ -12,13 +12,21 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.*;
 
 import com.appodeal.ads.Appodeal;
+import com.revmob.RevMob;
+import com.revmob.RevMobAdsListener;
+import com.revmob.RevMobUserGender;
+import com.revmob.ads.banner.RevMobBanner;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Locale;
 
@@ -29,10 +37,67 @@ public class AddEventActivity extends AppCompatActivity {
     boolean isInEditMode = false;
     String editOccasionsDateKey="";
 
+    RevMob revmob;
+    RevMobBanner banner;
+
+    @Override
+    public void  onPause()
+    {
+        super.onPause();
+
+        releaseBanner();
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+
+        loadBanner();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_event);
+
+        revmob = RevMob.startWithListener(this, new RevMobAdsListener() {
+            @Override
+            public void onRevMobSessionStarted() {
+                loadBanner(); // Cache the banner once the session is started
+            }
+        },"5874a4b7c2164c4947d37e08");
+
+        SharedPreferences sp = getSharedPreferences("your_prefs",MODE_PRIVATE);
+        if(sp.getBoolean("isProfileUpdated", false))
+        {
+            revmob.setUserEmail(sp.getString("email","testEmail@test.com"));
+            if(sp.getBoolean("isFemale",false)) {
+                revmob.setUserGender(RevMobUserGender.FEMALE);
+            }
+            else {
+                revmob.setUserGender(RevMobUserGender.MALE);
+            }
+            revmob.setUserPage(sp.getString("pageLink","facebook.com/revmob"));
+            String ageStr = sp.getString("ageStr","18");
+            int age = Integer.parseInt(ageStr);
+            revmob.setUserAgeRangeMax(age-3);
+            revmob.setUserAgeRangeMin(age+3);
+
+            String bDayText = sp.getString("bDayText","28/03/1988");
+            String components[] = bDayText.split("/");
+            revmob.setUserBirthday(new GregorianCalendar(Integer.parseInt(components[2]), Integer.parseInt(components[1]), Integer.parseInt(components[0])));
+
+            String interestsStr = sp.getString("interestsString","Literature, Books");
+
+            ArrayList<String> interests = new ArrayList<String>();
+            interests.add(interestsStr);
+            revmob.setUserInterests(interests);
+        }
+        else {
+            Intent i = new Intent(this, UserProfile.class);
+            startActivity(i);
+        }
 
         Appodeal.show(this, Appodeal.BANNER_BOTTOM);
 
@@ -144,5 +209,43 @@ public class AddEventActivity extends AppCompatActivity {
         eventsEditText.setSelection(eventsEditText.getText().length());
         isInEditMode = true;
         editOccasionsDateKey = dateKey;
+    }
+
+    //===Ad Methods
+
+    public void loadBanner(){
+        banner = revmob.preLoadBanner(this, new RevMobAdsListener(){
+            @Override
+            public void onRevMobAdReceived() {
+                showBanner();
+                Log.i("RevMob","Banner Ready to be Displayed"); //At this point, the banner is ready to be displayed.
+            }
+            @Override
+            public void onRevMobAdNotReceived(String message) {
+                Log.i("RevMob","Banner Not Failed to Load");
+            }
+            @Override
+            public void onRevMobAdDisplayed() {
+                Log.i("RevMob","Banner Displayed");
+            }
+        });
+    }
+
+    public void showBanner(){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Appodeal.hide(AddEventActivity.this, Appodeal.BANNER_BOTTOM);
+                ViewGroup view = (ViewGroup) findViewById(R.id.bannerLayout);
+                if(banner.getParent()!=null)
+                    ((ViewGroup)banner.getParent()).removeView(banner);
+                view.addView(banner);
+                banner.show(); //This method must be called in order to display the ad.
+            }
+        });
+    }
+
+    public void releaseBanner(){
+        banner.release();
     }
 }

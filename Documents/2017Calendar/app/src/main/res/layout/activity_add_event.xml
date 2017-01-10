@@ -119,4 +119,12 @@
         >
     </ListView>
 
+    <LinearLayout android:id="@+id/bannerLayout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true">
+    </LinearLayout>
+
 </RelativeLayout>

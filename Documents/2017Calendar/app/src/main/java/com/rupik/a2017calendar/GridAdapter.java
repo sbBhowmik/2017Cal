@@ -87,6 +87,14 @@ public class GridAdapter extends ArrayAdapter {
         String occasionName = dateObj.getOccasionName();
         String userEvents = dateObj.getUserEvents();
         boolean isUserEventsPresent = false;
+
+        boolean isAltSat = false;
+        if(position==13||position==27||position==41)
+        {
+            if(dateObj.getActive())
+                isAltSat = true;
+        }
+
         if(userEvents!=null && userEvents.length()>0)
         {
             isUserEventsPresent = true;
@@ -110,7 +118,19 @@ public class GridAdapter extends ArrayAdapter {
             holder.blueDot.setVisibility(View.INVISIBLE);
         }
 
+        if(isAltSat)
+        {
+            if(allEventsString==null)
+            {
+                allEventsString = "Alternate Saturday: Bank Holiday";
+            }
+            else {
+                allEventsString = allEventsString + ", Alternate Saturday: Bank Holiday";
+            }
+        }
+
         holder.occasionTextView.setText(allEventsString);
+
         if(dateObj.isNationalHoliday)
         {
             holder.occasionTextView.setTextColor(Color.parseColor("#d65151"));
@@ -132,23 +152,26 @@ public class GridAdapter extends ArrayAdapter {
         int displayedYear = calendar.get(Calendar.YEAR);
 
 
-        if((currentMonth==displayedMonth) && (currentYear==displayedYear) && dateObj.isActive)
+        if(isAltSat){
+            row.setBackgroundResource(R.drawable.date_cell_alternate_sat_bg);
+        }
+        else if(position%7==0) //sunday
         {
-            if(Integer.parseInt(dateStr)==todaysDate)
-            {
-                row.setBackgroundResource(R.drawable.todays_date_cell_bg);
-            }
-            else {
-                row.setBackgroundResource(R.drawable.date_cell_bg_selected);
-            }
+            row.setBackgroundResource(R.drawable.date_cell_alternate_sat_bg);
         }
         else {
-            if(dateObj.isActive)
-            {
-                row.setBackgroundResource(R.drawable.date_cell_other_months_bg);
-            }
-            else {
-                row.setBackgroundResource(R.drawable.date_cell_bg);
+            if ((currentMonth == displayedMonth) && (currentYear == displayedYear) && dateObj.isActive) {
+                if (Integer.parseInt(dateStr) == todaysDate) {
+                    row.setBackgroundResource(R.drawable.todays_date_cell_bg);
+                } else {
+                    row.setBackgroundResource(R.drawable.date_cell_bg_selected);
+                }
+            } else {
+                if (dateObj.isActive) {
+                    row.setBackgroundResource(R.drawable.date_cell_other_months_bg);
+                } else {
+                    row.setBackgroundResource(R.drawable.date_cell_bg);
+                }
             }
         }
 

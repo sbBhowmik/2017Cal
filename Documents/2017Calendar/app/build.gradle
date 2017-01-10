@@ -31,4 +31,5 @@ dependencies {
     compile project(':cheetah-mobile-3.4.7')
     compile 'com.google.android.gms:play-services-ads:8.4.0'
     compile 'com.google.android.gms:play-services-location:8.4.0'
+    compile files('libs/revmob.jar')
 }
