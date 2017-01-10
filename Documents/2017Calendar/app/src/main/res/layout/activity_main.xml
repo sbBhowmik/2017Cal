@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="rupik.com.calendar.MainActivity"
+    android:background="#bdcfed"
+    >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/dateSummaryBaseView"
+        >
+
+        <ImageButton
+            android:id="@+id/prevMonthBtn"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/date_summary_date_bg"
+            android:textColor="#ffffff"
+            android:src="@drawable/left_arrow"
+            android:scaleType="fitCenter"
+            />
+
+        <TextView
+            android:id="@+id/currentMonthYearTV"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:text="January 2016"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:background="@drawable/month_year_tv_bg"
+            android:layout_marginLeft="20dp"
+
+            android:layout_gravity="center"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+
+
+
+        <Button
+            android:id="@+id/dateSummaryButton"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:text="25"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/current_date_bg"
+            />
+
+        <ImageButton
+            android:id="@+id/nextMonthBtn"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/date_summary_date_bg"
+            android:textColor="#ffffff"
+            android:src="@drawable/right_arrow"
+            android:scaleType="fitCenter"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/linearBaseViewId"
+        android:layout_below="@+id/dateSummaryBaseView"
+        android:layout_marginTop="5dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1228"
+            android:text="Sun"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1328"
+            android:text="Mon"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1228"
+            android:text="Tue"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1228"
+            android:text="Wed"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1328"
+            android:text="Thu"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1328"
+            android:text="Fri"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1328"
+            android:text="Sat"
+            />
+
+        </LinearLayout>
+
+    <GridView
+        android:id="@+id/calGridView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="7"
+        android:minHeight="70dp"
+        android:drawSelectorOnTop="true"
+        android:gravity="center"
+        android:stretchMode="columnWidth"
+        android:focusable="true"
+        android:clickable="true"
+        android:layout_below="@+id/linearBaseViewId"
+        android:layout_marginBottom="44dp"
+        ></GridView>
+</RelativeLayout>

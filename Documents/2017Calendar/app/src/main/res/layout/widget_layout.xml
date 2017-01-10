@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#65000000"
+    >
+
+    <TextView
+        android:id="@+id/widgetTodaysDateTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="26-Octobar-2016"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:textColor="#ffffff"
+        android:background="#65000000"
+        android:paddingLeft="5dp"
+        />
+    <ImageView
+        android:id="@+id/transparentImageView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/widgetTodaysDateTV"
+        android:background="#ffffff"
+        />
+
+    <ListView
+        android:id="@+id/calwidgetListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       android:layout_below="@+id/transparentImageView"
+        android:background="#65000000"
+        ></ListView>
+
+    <Button
+        android:id="@+id/widgetTestBtn"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:background="@drawable/add_reminder_bg"
+        android:text="TEST"
+        android:visibility="gone"
+        />
+
+
+</RelativeLayout>

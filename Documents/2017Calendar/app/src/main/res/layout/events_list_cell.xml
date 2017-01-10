@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/list_cell_eventsTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MahalayaMah"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:textColor="#ffffff"
+        android:layout_marginRight="100dp"
+        />
+
+    <ImageButton
+        android:id="@+id/list_cell_edit_btn"
+        android:layout_width="44dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/edit_icon"
+        android:scaleType="fitCenter"
+        android:background="@null"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+         />
+
+    <ImageButton
+        android:id="@+id/list_cell_delete_btn"
+        android:layout_width="44dp"
+        android:layout_height="30dp"
+        android:layout_toLeftOf="@+id/list_cell_edit_btn"
+        android:src="@drawable/delete_icon"
+        android:scaleType="fitCenter"
+        android:background="@null"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginRight="10dp"
+        />
+
+</RelativeLayout>

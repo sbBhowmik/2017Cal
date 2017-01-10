@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/blue_dot_IV"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="3dp"
+        android:src="@drawable/blue_dot"
+        />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="21"
+        android:textSize="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="3dp"
+        />
+    <TextView
+        android:id="@+id/occasionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@id/dateTextView"
+        android:textSize="7sp"
+        android:textStyle="bold"
+        android:text="Diwali"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:ellipsize="end"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="70dp" />
+
+    <Button
+        android:id="@+id/gridDetectTapButton"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@android:color/transparent"
+        />
+
+</RelativeLayout>

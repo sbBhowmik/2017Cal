@@ -1,0 +1,565 @@
+{
+  "2016": {
+    "9": [
+      {
+        "occasion": "Maharaja Agrasen Jayanti",
+        "date": 1
+      },
+      {
+        "occasion": "Mahatma Gandhi Birthday",
+        "date": 2,
+        "nationalHoliday": 1
+      },
+      {
+        "occasion": "Muharram",
+        "date": 2
+      },
+      {
+        "occasion": "Maha Saptami",
+        "date": 9
+      },
+      {
+        "occasion": "Maha Astami",
+        "date": 10
+      },
+      {
+        "occasion": "Ayudh Puja",
+        "date": 10
+      },
+      {
+        "occasion": "Navami",
+        "date": 10
+      },
+      {
+        "occasion": "Dashami",
+        "date": 11,
+        "nationalHoliday": 1
+      },
+      {
+        "occasion": "Dusshera",
+        "date": 11,
+        "nationalHoliday": 1
+      },
+      {
+        "occasion": "Muharram",
+        "date": 12
+      },
+      {
+        "occasion": "Lakshmi Puja",
+        "date": 15
+      },
+      {
+        "occasion": "Maharishi Valmiki birthday",
+        "date": 16
+      },
+      {
+        "occasion": "Parkash Gurparab of Sri Guru Ram Dass ji",
+        "date": 17
+      },
+      {
+        "occasion": "Narak Chaturdashi",
+        "date": 29
+      },
+      {
+        "occasion": "Diwali",
+        "date": 29,
+        "nationalHoliday": 1
+      },
+      {
+        "occasion": "Kali Puja",
+        "date": 29,
+        "nationalHoliday": 1
+      },
+      {
+        "occasion": "Diwali",
+        "date": 30,
+        "nationalHoliday": 1
+      },
+      {
+        "occasion": "Vikram Samvat New Year",
+        "date": 31
+      },
+      {
+        "occasion": "Vishavkarma Day",
+        "date": 31
+      }
+    ],
+    "10": [
+          {
+            "occasion": "Bhai Bij",
+            "date": 1
+          },
+          {
+            "occasion": "Kannada Rajyotsava",
+            "date": 1
+          },
+          {
+            "occasion": "Hariyana Day",
+            "date": 1
+          },
+          {
+            "occasion": "Vivsavkarma Day",
+            "date": 1
+          },
+          {
+            "occasion": "Chaat Puja",
+            "date": 6
+          },
+          {
+            "occasion": "Chaat Puja",
+            "date": 7
+          },
+          {
+            "occasion": "Guru Nanak's Birthday",
+            "date": 14,
+            "nationalHoliday": 1
+          },
+          {
+            "occasion": "Rasa Purnima",
+            "date": 14
+          },
+          {
+            "occasion": "Kanakadasa Jayanti",
+            "date": 17
+          }
+        ],
+        "11": [
+                  {
+                    "occasion": "World Disabled Day",
+                    "date": 3
+                  },
+                  {
+                    "occasion": "Feast of Saint Francis Xavier",
+                    "date": 3
+                  },
+                  {
+                    "occasion": "Martyrdom Dom day of Sri Guru Teg Bahadur Ji",
+                    "date": 4
+                  },
+                  {
+                    "occasion": "Id-e-Milad",
+                    "date": 12
+                  },
+                  {
+                    "occasion": "Id-e-Milad",
+                    "date": 13
+                  },
+                  {
+                    "occasion": "Goa Liberation Day",
+                    "date": 19
+                  },
+                  {
+                    "occasion": "Christmas Day",
+                    "date": 25,
+                    "nationalHoliday": 1
+                  },
+                  {
+                    "occasion": "Shaheed Udham Singh's Birthday",
+                    "date": 26
+                  },
+                  {
+                    "occasion": "Boxing Day",
+                    "date": 26
+                  }
+                ]
+  },
+  "2017": {
+      "0": [
+        {
+          "occasion": "New Year",
+          "date": 1
+        },
+        {
+          "occasion": "Guru Govind singh Jayanti",
+          "date": 5
+        },
+        {
+          "occasion": "Swami Vivekananda's Birthday",
+          "date": 12
+        },
+        {
+          "occasion": "Bhogi",
+          "date": 13
+        },
+        {
+          "occasion": "Pongal",
+          "date": 14
+        },
+        {
+          "occasion": "Uzhavar Tirunal",
+          "date": 16
+        },
+        {
+          "occasion": " Birthday of Netaji Subhas Chandra Bose",
+          "date": 23
+        },
+        {
+          "occasion": "Sir Chhotu Ram Jayanti",
+          "date": 24
+        },
+        {
+          "occasion": "Statehood Day",
+          "date": 25
+        },
+        {
+          "occasion": "Republic Day",
+          "date": 26,
+          "nationalHoliday": 1
+        },
+        {
+          "occasion": "Loshar-Tibetian New Year",
+          "date": 28
+        },
+        {
+          "occasion": "Me-dam-me-phi Ancestor Festival in Assam",
+          "date": 31
+        }
+      ],
+      "1":[
+      {
+                      "occasion": "Vasant Panchami - Saraswati Puja",
+                      "date": 1,
+                                                     "nationalHoliday": 1
+                    },
+                    {
+                      "occasion": "Guru Ravidas Birthday",
+                      "date": 10
+                    },
+                    {
+                      "occasion": "Chatrapati Shivaji Maharaj Jayanti",
+                      "date": 19
+                    },
+                    {
+                      "occasion": "Maharishi Dayanand Saraswati Jayanti",
+                      "date": 21
+                    },
+                    {
+                      "occasion": "Maha Shivratri",
+                      "date": 24,
+                      "nationalHoliday": 1
+                    }
+        ],
+        "2": [
+                {
+                  "occasion": "Doljatra",
+                  "date": 12,
+                   "nationalHoliday": 1
+                },
+                {
+                  "occasion": "Holi",
+                  "date": 13,
+                  "nationalHoliday": 1
+                },
+                {
+                  "occasion": "Shaheed Diwas of Bhagat Singh, Rajguru and sukhdev",
+                  "date": 23
+                },
+                {
+                  "occasion": "Ugadi",
+                  "date": 28,
+                  "nationalHoliday": 1
+                }
+              ],
+              "3": [
+                                {
+                                  "occasion": "Odisha Day",
+                                  "date": 1
+                                },
+                                {
+                                  "occasion": "Bank Holiday - Annual Accounts Closing",
+                                  "date": 1
+                                },
+                                {
+                                  "occasion": "Ram Navami",
+                                  "date": 4,
+                                  "nationalHoliday": 1
+                                },
+                                {
+                                  "occasion": "Babu Jagjivan Ram Birthday",
+                                  "date": 5
+                                },
+                                {
+                                  "occasion": "Mahavir Jayanti",
+                                  "date": 9,
+                                   "nationalHoliday": 1
+                                },
+                                {
+                                  "occasion": "Vaisakhi",
+                                  "date": 11
+                                },
+                                {
+                                  "occasion": "Dr. Ambedkar Jayanti",
+                                  "date": 14,
+                                   "nationalHoliday": 1
+                                },
+                                {
+                                  "occasion": "Good Friday",
+                                  "date": 14,
+                                  "nationalHoliday": 1
+                                },
+                                {
+                                  "occasion": "Tamil New Year",
+                                  "date": 14
+                                },
+                                {
+                                "occasion": "Vishu - First Day Of Tulu Calendar",
+                                "date": 14
+                                },
+                                {
+                                "occasion": "Bohag Bihu - Assamese New Year",
+                                "date": 14
+                                },
+                                {
+                                "occasion": "Bengali New Year",
+                                "date": 15,
+                                "nationalHoliday": 1
+                                },
+                                                                 {
+                                                                   "occasion": "Himachal Day",
+                                                                   "date": 15
+                                                                 },
+                                                                 {
+                                                                 "occasion": "Bohag Bihu",
+                                                                 "date": 15
+                                                                 },
+                                                                 {
+                                                                 "occasion": "Bohag Bihu - Assamese New Year",
+                                                                 "date": 16
+                                                                 },
+                                                                 {
+                                                                 "occasion": "Parasharum Jayanti",
+                                                                 "date": 28
+                                                                 }
+                              ],
+              "4": [
+                                {
+                                  "occasion": "May Day",
+                                  "date": 1,
+                                   "nationalHoliday": 1
+                                },
+                                {
+                                  "occasion": "Maharastra Day",
+                                  "date": 1
+                                },
+                                {
+                                  "occasion": "Rabindra Jayanti- Birthday of Bishwakabi Rabindra Nath Tagore",
+                                  "date": 9,
+                                   "nationalHoliday": 1
+                                },
+                                {
+                                  "occasion": "Buddha Purnima",
+                                  "date": 10,
+                                  "nationalHoliday": 1
+                                },
+                                {
+                                  "occasion": "State Day - Sikkim",
+                                  "date": 16
+                                },
+                                {
+                                  "occasion": "Maharana Pratap Jayanti",
+                                  "date": 28
+                                }
+                              ],
+        "5": [
+                          {
+                            "occasion": "Saint Guru Kabir Jayanti",
+                            "date": 9
+                          },
+                          {
+                            "occasion": "Raja sankranti - Odisha",
+                            "date": 15
+                          },
+                          {
+                            "occasion": "Guru Arjun Dev Martyrdom day",
+                            "date": 16
+                          },
+                          {
+                            "occasion": "Jumat-ul-Wida - Last Friday of Ramadan",
+                            "date": 23,
+                            "nationalHoliday": 1
+                          },
+                          {
+                            "occasion": "Ratha Yatra",
+                            "date": 25,
+                            "nationalHoliday": 1
+                          },
+                          {
+                            "occasion": "Id-ul-Fitr",
+                            "date": 26,
+                            "nationalHoliday": 1
+                          }
+                        ]        ,
+         "6": [
+                                  {
+                                    "occasion": "Karkkadaku Vavu - Kerela",
+                                    "date": 23
+                                  }
+                                  ],
+
+        "7": [
+                          {
+                            "occasion": "Raksha Bandhan",
+                            "date": 7,
+                                                                 "nationalHoliday": 1
+                          },
+                          {
+                            "occasion": "Independence Day",
+                            "date": 15,
+                                                                  "nationalHoliday": 1
+                          },
+                          {
+                            "occasion": "Janmastami",
+                            "date": 15
+                          },
+                          {
+                            "occasion": "Parsi New Year",
+                            "date": 17
+                          },
+                          {
+                            "occasion": "Teej",
+                            "date": 24
+                          },
+                          {
+                            "occasion": "Ganesh Chathurthi",
+                            "date": 25,
+                              "nationalHoliday": 1
+                          },
+                          {
+                            "occasion": "Nuakhai - Harvest Festival in Odisha",
+                            "date": 26
+                          }
+                        ],
+        "8": [
+                          {
+                            "occasion": "Id-ul-Juha Bakri Id",
+                            "date": 2,
+                                                                   "nationalHoliday": 1
+                          },
+                          {
+                            "occasion": "First Onam - Harvest Festival in Kerela",
+                            "date": 4
+                          },
+                          {
+                            "occasion": "Thiruvonam - Harvest Festival in Kerela",
+                            "date": 5
+                          },
+                          {
+                            "occasion": "Mahalaya",
+                            "date": 19,
+                            "nationalHoliday": 1
+                          },
+                          {
+                            "occasion": "Muharram",
+                            "date": 21,
+                            "nationalHoliday": 1
+                          },
+                          {
+                            "occasion": "Maharaja Agrasen Jayanti",
+                            "date": 21
+                          },
+                          {
+                            "occasion": "Shree Narayana Guru Samadhi",
+                            "date": 21
+                          },
+                          {
+                            "occasion": "Hariyana Heroes Martyrdom Day",
+                            "date": 23
+                          },
+                          {
+                            "occasion": "Maha Saptami - Durga Puja",
+                            "date": 27,
+                                                                  "nationalHoliday": 1
+                          },
+                                                     {
+                                                       "occasion": "Maha Asthami - Durga Puja",
+                                                       "date": 28,                                                                                                                                 "nationalHoliday": 1
+                                                     },
+                                                     {
+                                                       "occasion": "Ayudha Puja",
+                                                       "date": 28
+                                                     },
+                                                     {
+                                                       "occasion": "Maha Navami - Durga Puja",
+                                                       "date": 29,                                                                                                                                 "nationalHoliday": 1
+                                                     },
+                                                     {
+                                                       "occasion": "Dashami, Dusshera",
+                                                       "date": 30,
+                                                                                             "nationalHoliday": 1
+                                                     }
+                        ],
+
+        "9": [
+                          {
+                            "occasion": "Muharram",
+                            "date": 1,                                                                                                                                 "nationalHoliday": 1
+                          },
+                          {
+                            "occasion": "Mahatma Gandhi Birthday",
+                            "date": 2,                                                                                                                                 "nationalHoliday": 1
+                          },
+                          {
+                            "occasion": "Maharishi Valmiki Birthday",
+                            "date": 5
+                          },
+                          {
+                            "occasion": "Lakshmi Puja",
+                            "date": 5,                                                                                                                                 "nationalHoliday": 1
+                          },
+                          {
+                            "occasion": "Kali Puja",
+                            "date": 18,                                                                                                                                 "nationalHoliday": 1
+                          },
+                          {
+                            "occasion": "diwali",
+                            "date": 18,                                                                                                                                 "nationalHoliday": 1
+                          },
+                          {
+                            "occasion": "Kati Bihu",
+                            "date": 18,
+                            "nationalHoliday": 1
+                          },
+                          {
+                            "occasion": "Vishavkarma Day",
+                            "date": 20
+                          }
+                        ],
+        "10": [
+                                  {
+                                    "occasion": "Kannada Rajyotsava",
+                                    "date": 1,                                                                                                                                 "nationalHoliday": 1
+                                  },
+                                  {
+                                    "occasion": "Guru Nanak Birthday",
+                                    "date": 4,                                                                                                                                 "nationalHoliday": 1
+                                  },
+                                  {
+                                    "occasion": "Rasa Purnima",
+                                    "date": 4
+                                  }
+                                ],
+        "11": [
+                                          {
+                                            "occasion": "Milad-un-Navi",
+                                            "date": 2
+                                          },
+                                          {
+                                            "occasion": "Feast of saint francis Xavier",
+                                            "date": 3
+                                          },
+                                          {
+                                            "occasion": "Goa Liberation Day",
+                                            "date": 19
+                                          },
+                                                                                     {
+                                                                                       "occasion": "christmas Day, Guru Govind Singh Jayanti",
+                                                                                       "date": 25,                                                                                                                                 "nationalHoliday": 1
+                                                                                     },
+                                                                                       {                                                                                                                                 "occasion": "Shaheed Udham Singh's Birthday",
+                                                                                      "date": 26
+                                                                                     }
+
+                                        ]
+  }
+
+}

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="rupik.com.calendar.AddEventActivity"
+    android:background="@drawable/add_reminder_bg"
+    >
+
+    <Button
+        android:id="@+id/cancelReminderBtn"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:text="Cancel"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/date_summary_date_bg"
+        />
+
+    <Button
+        android:id="@+id/saveReminderBtn"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:text="Save"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/date_summary_date_bg"
+        />
+
+    <TextView
+        android:id="@+id/selectedDateTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="18-Octobar-2016"
+        android:textSize="17sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        />
+
+
+
+    <EditText
+        android:id="@+id/addReminderEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/selectedDateTV"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="#ffffff"
+        android:hint="Tap to Add Events &amp; Reminders"
+        android:textColorHint="#ffffff"
+        android:theme="@style/MyEditTextTheme"
+        />
+
+
+    <ImageButton
+        android:id="@+id/addReminderBtn"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:src="@drawable/alarm_clock"
+        android:scaleType="fitCenter"
+        android:background="@null"
+        android:layout_below="@+id/selectedDateTV"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"
+        android:layout_marginLeft="10dp"
+         />
+
+    <TextView
+        android:id="@+id/eventsTVLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addReminderBtn"
+        android:layout_marginTop="30dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:text="Events on 18-Septembar-2016"
+        />
+
+    <TextView
+        android:id="@+id/eventsTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventsTVLabel"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:text="Diwali \n Dashami"
+        android:visibility="gone"
+        />
+
+
+
+    <ListView
+        android:id="@+id/eventsListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/eventsTVLabel"
+        android:layout_marginBottom="44dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        >
+    </ListView>
+
+</RelativeLayout>
