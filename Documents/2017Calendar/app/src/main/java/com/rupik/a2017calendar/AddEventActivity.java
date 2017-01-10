@@ -99,7 +99,7 @@ public class AddEventActivity extends AppCompatActivity {
             startActivity(i);
         }
 
-        Appodeal.show(this, Appodeal.BANNER_BOTTOM);
+        //Appodeal.show(this, Appodeal.BANNER_BOTTOM);
 
         Intent intent = this.getIntent();
         dateObj = (DateObj)intent.getSerializableExtra("DateObject");

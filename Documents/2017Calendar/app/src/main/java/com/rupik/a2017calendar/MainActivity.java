@@ -63,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
         dateArrayList = DateUtils.getInstance().prepareCalDateSet(currentDisplayedYear, currentDisplayedMonth, this, false);
         displayCalendar();
 
-        Appodeal.onResume(this, Appodeal.BANNER);
-        Appodeal.show(this, Appodeal.BANNER_BOTTOM);
+        //Appodeal.onResume(this, Appodeal.BANNER);
+        //Appodeal.show(this, Appodeal.BANNER_BOTTOM);
     }
 
     @Override
@@ -85,9 +85,9 @@ public class MainActivity extends AppCompatActivity {
         loadFullscreen(); // pre-cache it without showing it
 
         String appKey = "78dd18cbdd1a74e69505f95d0bc114e25e82f831f17e4bb9";
-        Appodeal.initialize(this, appKey, Appodeal.INTERSTITIAL | Appodeal.BANNER);
+        //Appodeal.initialize(this, appKey, Appodeal.INTERSTITIAL | Appodeal.BANNER);
 
-        Appodeal.show(this, Appodeal.BANNER_BOTTOM);
+        //Appodeal.show(this, Appodeal.BANNER_BOTTOM);
 
         setTodaysDate();
 
@@ -319,7 +319,8 @@ public class MainActivity extends AppCompatActivity {
             fullscreen.show(); // call it wherever you want to show the fullscreen ad
         } else {
             Log.i("RevMob", "Ad not loaded yet.");
-            Appodeal.show(this, Appodeal.INTERSTITIAL);
+            //
+            // Appodeal.show(this, Appodeal.INTERSTITIAL);
         }
     }
 
