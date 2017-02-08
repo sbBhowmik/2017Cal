@@ -122,10 +122,10 @@ public class GridAdapter extends ArrayAdapter {
         {
             if(allEventsString==null)
             {
-                allEventsString = "Alternate Saturday: Bank Holiday";
+                allEventsString = "Bank Holiday";
             }
             else {
-                allEventsString = allEventsString + ", Alternate Saturday: Bank Holiday";
+                allEventsString = allEventsString + ", Bank Holiday";
             }
         }
 

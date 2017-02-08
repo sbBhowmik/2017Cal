@@ -400,16 +400,17 @@
                           {
                             "occasion": "Raksha Bandhan",
                             "date": 7,
-                                                                 "nationalHoliday": 1
+                            "nationalHoliday": 1
                           },
                           {
                             "occasion": "Independence Day",
                             "date": 15,
-                                                                  "nationalHoliday": 1
+                             "nationalHoliday": 1
                           },
                           {
                             "occasion": "Janmastami",
-                            "date": 15
+                            "date": 15,
+                            "nationalHoliday": 1
                           },
                           {
                             "occasion": "Parsi New Year",

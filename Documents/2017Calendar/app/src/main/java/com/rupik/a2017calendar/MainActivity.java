@@ -63,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
         dateArrayList = DateUtils.getInstance().prepareCalDateSet(currentDisplayedYear, currentDisplayedMonth, this, false);
         displayCalendar();
 
-        //Appodeal.onResume(this, Appodeal.BANNER);
-        //Appodeal.show(this, Appodeal.BANNER_BOTTOM);
+        Appodeal.onResume(this, Appodeal.BANNER);
+        Appodeal.show(this, Appodeal.BANNER_BOTTOM);
     }
 
     @Override
@@ -73,21 +73,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        revmob = RevMob.startWithListener(this, new RevMobAdsListener() {
-            @Override
-            public void onRevMobSessionStarted() {
-                loadBanner(); // Cache the banner once the session is started
-                loadFullscreen(); // pre-cache it without showing it
-            }
-        },"5874a4b7c2164c4947d37e08");
-
-        loadBanner();
-        loadFullscreen(); // pre-cache it without showing it
+//        revmob = RevMob.startWithListener(this, new RevMobAdsListener() {
+//            @Override
+//            public void onRevMobSessionStarted() {
+//                loadBanner(); // Cache the banner once the session is started
+//                loadFullscreen(); // pre-cache it without showing it
+//            }
+//        },"5874a4b7c2164c4947d37e08");
+//
+//        loadBanner();
+//        loadFullscreen(); // pre-cache it without showing it
 
         String appKey = "78dd18cbdd1a74e69505f95d0bc114e25e82f831f17e4bb9";
-        //Appodeal.initialize(this, appKey, Appodeal.INTERSTITIAL | Appodeal.BANNER);
+        Appodeal.initialize(this, appKey, Appodeal.INTERSTITIAL | Appodeal.BANNER);
 
-        //Appodeal.show(this, Appodeal.BANNER_BOTTOM);
+        Appodeal.show(this, Appodeal.BANNER_BOTTOM);
 
         setTodaysDate();
 
@@ -99,7 +99,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 displayPreviousMonthCalendar();
-                reloadBanner();
+//                reloadBanner();
+                Appodeal.show(MainActivity.this,Appodeal.BANNER_BOTTOM);
             }
         });
 
@@ -108,7 +109,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 displayNextMonthCalendar();
-                reloadBanner();
+                Appodeal.show(MainActivity.this,Appodeal.BANNER_BOTTOM);
+//                reloadBanner();
             }
         });
 
@@ -159,8 +161,8 @@ public class MainActivity extends AppCompatActivity {
     {
         if(adCount == 7)
         {
-            //Appodeal.show(this, Appodeal.INTERSTITIAL);
-            showFullscreen();
+            Appodeal.show(this, Appodeal.INTERSTITIAL);
+//            showFullscreen();
             adCount = 0;
         }
         else {
@@ -184,8 +186,8 @@ public class MainActivity extends AppCompatActivity {
     {
         if(adCount == 7)
         {
-            //Appodeal.show(this, Appodeal.INTERSTITIAL);
-            showFullscreen();
+            Appodeal.show(this, Appodeal.INTERSTITIAL);
+//            showFullscreen();
             adCount = 0;
         }
         else {
@@ -239,52 +241,52 @@ public class MainActivity extends AppCompatActivity {
         currentDisplayedYear = calendar.get(Calendar.YEAR);
 
         int date = calendar.get(Calendar.DATE);
-        Button todaysDateButton = (Button)findViewById(R.id.dateSummaryButton);
-        todaysDateButton.setText(Integer.toString(date));
+//        Button todaysDateButton = (Button)findViewById(R.id.dateSummaryButton);
+//        todaysDateButton.setText(Integer.toString(date));
     }
 
     //===Ad Methods
 
     public void loadBanner(){
-        banner = revmob.preLoadBanner(this, new RevMobAdsListener(){
-            @Override
-            public void onRevMobAdReceived() {
-                showBanner();
-                Log.i("RevMob","Banner Ready to be Displayed"); //At this point, the banner is ready to be displayed.
-            }
-            @Override
-            public void onRevMobAdNotReceived(String message) {
-                Log.i("RevMob","Banner Not Failed to Load");
-            }
-            @Override
-            public void onRevMobAdDisplayed() {
-                Log.i("RevMob","Banner Displayed");
-            }
-        });
+//        banner = revmob.preLoadBanner(this, new RevMobAdsListener(){
+//            @Override
+//            public void onRevMobAdReceived() {
+//                showBanner();
+//                Log.i("RevMob","Banner Ready to be Displayed"); //At this point, the banner is ready to be displayed.
+//            }
+//            @Override
+//            public void onRevMobAdNotReceived(String message) {
+//                Log.i("RevMob","Banner Not Failed to Load");
+//            }
+//            @Override
+//            public void onRevMobAdDisplayed() {
+//                Log.i("RevMob","Banner Displayed");
+//            }
+//        });
     }
 
     public void showBanner(){
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                Appodeal.hide(MainActivity.this, Appodeal.BANNER_BOTTOM);
-                ViewGroup view = (ViewGroup) findViewById(R.id.bannerLayout);
-                if(banner.getParent()!=null)
-                    ((ViewGroup)banner.getParent()).removeView(banner);
-                view.addView(banner);
-                banner.show(); //This method must be called in order to display the ad.
-            }
-        });
+//        runOnUiThread(new Runnable() {
+//            @Override
+//            public void run() {
+//                Appodeal.hide(MainActivity.this, Appodeal.BANNER_BOTTOM);
+//                ViewGroup view = (ViewGroup) findViewById(R.id.bannerLayout);
+//                if(banner.getParent()!=null)
+//                    ((ViewGroup)banner.getParent()).removeView(banner);
+//                view.addView(banner);
+//                banner.show(); //This method must be called in order to display the ad.
+//            }
+//        });
     }
 
     public void releaseBanner(){
-        banner.release();
+//        banner.release();
     }
 
     public void reloadBanner()
     {
-        releaseBanner();
-        loadBanner();
+//        releaseBanner();
+//        loadBanner();
     }
 
     public void loadFullscreen() {

@@ -31,8 +31,8 @@
             android:text="January 2016"
             android:textSize="15sp"
             android:textStyle="bold"
-            android:textColor="#ffffff"
-            android:background="@drawable/month_year_tv_bg"
+            android:textColor="#083377"
+            android:background="#efc6e5"
             android:layout_marginLeft="20dp"
 
             android:layout_gravity="center"
@@ -51,9 +51,9 @@
 
         <Button
             android:id="@+id/dateSummaryButton"
-            android:layout_width="44dp"
+            android:layout_width="wrap_content"
             android:layout_height="44dp"
-            android:text="25"
+            android:text="Today"
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:padding="10dp"
